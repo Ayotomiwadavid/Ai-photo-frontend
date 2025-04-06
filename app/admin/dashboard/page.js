@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import { PhotographIcon, CheckCircleIcon, ClockIcon, UserGroupIcon } from "@heroicons/react/outline"
-import StatsCard from "../../components/StatsCard"
-import ImageCard from "../../components/ImageCard"
+import StatsCard from "../../src/components/StatsCard"
+import ImageCard from "../../src/components/ImageCard"
 
 // Mock data for demonstration
 const mockRequests = [
@@ -157,41 +157,37 @@ const AdminDashboard = () => {
         <nav className="-mb-px flex space-x-8">
           <button
             onClick={() => setActiveTab("overview")}
-            className={`py-4 px-1 border-b-2 font-medium text-sm ${
-              activeTab === "overview"
-                ? "border-gray-900 text-gray-900"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-            }`}
+            className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === "overview"
+              ? "border-gray-900 text-gray-900"
+              : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+              }`}
           >
             Overview
           </button>
           <button
             onClick={() => setActiveTab("pending")}
-            className={`py-4 px-1 border-b-2 font-medium text-sm ${
-              activeTab === "pending"
-                ? "border-gray-900 text-gray-900"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-            }`}
+            className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === "pending"
+              ? "border-gray-900 text-gray-900"
+              : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+              }`}
           >
             Pending Requests
           </button>
           <button
             onClick={() => setActiveTab("completed")}
-            className={`py-4 px-1 border-b-2 font-medium text-sm ${
-              activeTab === "completed"
-                ? "border-gray-900 text-gray-900"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-            }`}
+            className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === "completed"
+              ? "border-gray-900 text-gray-900"
+              : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+              }`}
           >
             Completed Requests
           </button>
           <button
             onClick={() => setActiveTab("users")}
-            className={`py-4 px-1 border-b-2 font-medium text-sm ${
-              activeTab === "users"
-                ? "border-gray-900 text-gray-900"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-            }`}
+            className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === "users"
+              ? "border-gray-900 text-gray-900"
+              : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+              }`}
           >
             Users
           </button>
@@ -320,11 +316,10 @@ const AdminDashboard = () => {
                 <p>
                   <span className="font-medium">Status:</span>
                   <span
-                    className={`ml-2 px-2 py-0.5 rounded-full ${
-                      selectedImage.status === "completed"
-                        ? "bg-green-100 text-green-800"
-                        : "bg-yellow-100 text-yellow-800"
-                    }`}
+                    className={`ml-2 px-2 py-0.5 rounded-full ${selectedImage.status === "completed"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-yellow-100 text-yellow-800"
+                      }`}
                   >
                     {selectedImage.status}
                   </span>

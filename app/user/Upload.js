@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import ImageUploader from "../../components/ImageUploader"
+import ImageUploader from "../../src/components/ImageUploader"
 
 const UserUpload = () => {
   const [selectedImages, setSelectedImages] = useState([])

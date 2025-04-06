@@ -1,8 +1,8 @@
 "use client"
 import { Link } from "react-router-dom"
 import { PhotographIcon, CheckCircleIcon, ClockIcon, UploadIcon } from "@heroicons/react/outline"
-import StatsCard from "../../components/StatsCard"
-import { useAuth } from "../../context/AuthContext"
+import StatsCard from "@/src/components/StatsCard"
+import { useAuth } from "@/src/context/AuthContext"
 
 // Mock data for demonstration
 const mockStats = {
@@ -162,11 +162,10 @@ const UserDashboard = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                          upload.status === "completed"
-                            ? "bg-green-100 text-green-800"
-                            : "bg-yellow-100 text-yellow-800"
-                        }`}
+                        className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${upload.status === "completed"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-yellow-100 text-yellow-800"
+                          }`}
                       >
                         {upload.status}
                       </span>
