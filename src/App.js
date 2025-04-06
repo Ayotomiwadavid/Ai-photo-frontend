@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import AdminDashboard from "./pages/admin/Dashboard"
-import AdminLogin from "./pages/admin/Login"
-import UserDashboard from "./pages/user/Dashboard.js"
-import UserUpload from "./pages/user/Upload"
-import UserAnalytics from "./pages/user/Analytics"
-import UserResponses from "./pages/user/Responses"
+import AdminDashboard from "../app/admin/Dashboard"
+import AdminLogin from "../app/admin/Login"
+// import UserDashboard from "./app/user/dashboard/page
+import UserUpload from "../app/user/Upload"
+import UserAnalytics from "../app/user/analytics/Analytics"
+import UserResponses from "../app/user/Responses"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import ProtectedRoute from "./components/ProtectedRoute"
@@ -21,7 +21,7 @@ function App() {
 
         {/* User routes */}
         <Route path="/user" element={<ProtectedRoute />}>
-          <Route path="dashboard" element={<UserDashboard />} />
+          {/* <Route path="dashboard" element={<UserDashboard />} /> */}
           <Route path="upload" element={<UserUpload />} />
           <Route path="analytics" element={<UserAnalytics />} />
           <Route path="responses" element={<UserResponses />} />
@@ -32,10 +32,12 @@ function App() {
           <Route path="login" element={<AdminLogin />} />
           <Route path="dashboard" element={<AdminDashboard />} />
         </Route>
+
+        {/* Catch-all for 404 */}
+        <Route path="*" element={<div className="text-center mt-20 text-2xl">404 - Page Not Found</div>} />
       </Routes>
     </Router>
   )
 }
 
 export default App
-
